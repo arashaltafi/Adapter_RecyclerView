@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdapterRecyclerView">
         <activity
+            android:name=".drag_drop.dragAndDrop1.DragAndDropActivity1"
+            android:exported="false" />
+        <activity
+            android:name=".drag_drop.dragAndDrop2.DragAndDropActivity2"
+            android:exported="false" />
+        <activity
             android:name=".animation.ui.AnimationAdapterActivity"
             android:exported="false" />
         <activity

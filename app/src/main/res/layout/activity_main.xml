@@ -18,17 +18,31 @@
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:text="paging adapter"
         android:id="@+id/btn_paging_adapter"
         android:layout_height="wrap_content"/>
 
     <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:text="animation adapter"
         android:id="@+id/btn_animation_adapter"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:text="drag and drop 1"
+        android:id="@+id/btn_drag_and_drop_1"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:text="drag and drop 2"
+        android:id="@+id/btn_drag_and_drop_2"
         android:layout_height="wrap_content"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>
