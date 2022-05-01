@@ -34,6 +34,13 @@
     <com.google.android.material.button.MaterialButton
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
+        android:text="animation adapter 2"
+        android:id="@+id/btn_animation_adapter_2"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
         android:text="drag and drop 1"
         android:id="@+id/btn_drag_and_drop_1"
         android:layout_height="wrap_content"/>
