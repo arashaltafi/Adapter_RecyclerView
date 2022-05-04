@@ -6,9 +6,9 @@ import android.os.Bundle
 import com.arash.altafi.adapterrecyclerview.animation.ui.AnimationAdapterActivity
 import com.arash.altafi.adapterrecyclerview.animation2.ui.AnimationAdapterActivity2
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop1.DragAndDropActivity1
-import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2.DragAndDropActivity2
 import com.arash.altafi.adapterrecyclerview.listAdapter.ui.ListAdapterActivity
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.ui.PagingAdapterActivity
+import com.arash.altafi.adapterrecyclerview.swip.ui.SwipActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, DragAndDropActivity1::class.java))
         }
 
-        btn_drag_and_drop_2.setOnClickListener {
-            startActivity(Intent(this, DragAndDropActivity2::class.java))
+        btn_swipe_1.setOnClickListener {
+            startActivity(Intent(this, SwipActivity::class.java))
         }
 
     }

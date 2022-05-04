@@ -52,4 +52,11 @@
         android:id="@+id/btn_drag_and_drop_2"
         android:layout_height="wrap_content"/>
 
+    <com.google.android.material.button.MaterialButton
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:text="Swipe"
+        android:id="@+id/btn_swipe_1"
+        android:layout_height="wrap_content"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

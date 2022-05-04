@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdapterRecyclerView">
         <activity
+            android:name=".swip.ui.SwipActivity"
+            android:exported="false" />
+        <activity
             android:name=".animation2.ui.AnimationAdapterActivity2"
             android:exported="false" />
         <activity
