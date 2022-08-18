@@ -5,14 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.arash.altafi.adapterrecyclerview.R
+import com.arash.altafi.adapterrecyclerview.listAdapter.ext.highlightAll
 import com.arash.altafi.adapterrecyclerview.listAdapter.model.Pokemon
 
 class ListAdapter: ListAdapter<Pokemon, com.arash.altafi.adapterrecyclerview.listAdapter.ui.ListAdapter.ListAdapterViewHolder>(Companion) {
+
+    private var searchText: String = ""
 
     inner class ListAdapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imgPokemon: ImageView = itemView.findViewById(R.id.imgPokemon)
@@ -39,7 +43,15 @@ class ListAdapter: ListAdapter<Pokemon, com.arash.altafi.adapterrecyclerview.lis
                 it.sprites.other.officialArtwork.frontDefault
             )
             holder.txtPokemon.text = it.name
+            holder.txtPokemon.highlightAll(
+                searchText,
+                ContextCompat.getColor(holder.itemView.context, R.color.teal_700)
+            )
         }
+    }
+
+    fun setSearchText(text: String) {
+        searchText = text
     }
 
 }

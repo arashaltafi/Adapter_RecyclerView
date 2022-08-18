@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Adapter RecyclerView</string>
+    <string name="search">search</string>
 </resources>
