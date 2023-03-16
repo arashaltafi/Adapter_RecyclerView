@@ -1,4 +1,4 @@
-package com.arash.altafi.adapterrecyclerview.animation.ui
+package com.arash.altafi.adapterrecyclerview.animation.animation1.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.arash.altafi.adapterrecyclerview.R
-import com.arash.altafi.adapterrecyclerview.animation.model.AnimationModel
+import com.arash.altafi.adapterrecyclerview.animation.animation1.model.AnimationModel
 
 class AnimationAdapter: ListAdapter<AnimationModel, AnimationAdapter.AnimationViewHolder>(Companion) {
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".animation2.ui.AnimationAdapterActivity2">
+    tools:context=".animation.animation2.ui.AnimationAdapterActivity2">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAnimationAdapter2"

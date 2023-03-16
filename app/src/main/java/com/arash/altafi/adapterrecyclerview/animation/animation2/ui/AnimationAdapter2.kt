@@ -1,15 +1,14 @@
-package com.arash.altafi.adapterrecyclerview.animation2.ui
+package com.arash.altafi.adapterrecyclerview.animation.animation2.ui
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.arash.altafi.adapterrecyclerview.R
-import com.arash.altafi.adapterrecyclerview.animation2.model.AnimationModel2
+import com.arash.altafi.adapterrecyclerview.animation.animation2.model.AnimationModel2
 import com.google.android.material.card.MaterialCardView
 
 class AnimationAdapter2: ListAdapter<AnimationModel2, AnimationAdapter2.AnimationViewHolder>(Companion) {

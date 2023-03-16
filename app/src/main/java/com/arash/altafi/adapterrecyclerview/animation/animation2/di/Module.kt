@@ -1,6 +1,6 @@
-package com.arash.altafi.adapterrecyclerview.animation.di
+package com.arash.altafi.adapterrecyclerview.animation.animation2.di
 
-import com.arash.altafi.adapterrecyclerview.animation.ui.AnimationAdapter
+import com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapter2
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,6 +13,6 @@ object Module {
 
     @Singleton
     @Provides
-    fun provideAnimationAdapter() = AnimationAdapter()
+    fun provideAnimationAdapter2() = AnimationAdapter2()
 
 }

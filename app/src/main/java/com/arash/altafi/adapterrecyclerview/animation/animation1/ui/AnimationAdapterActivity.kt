@@ -1,10 +1,10 @@
-package com.arash.altafi.adapterrecyclerview.animation.ui
+package com.arash.altafi.adapterrecyclerview.animation.animation1.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.arash.altafi.adapterrecyclerview.R
-import com.arash.altafi.adapterrecyclerview.animation.model.AnimationModel
+import com.arash.altafi.adapterrecyclerview.animation.animation1.model.AnimationModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_animation_adapter.*
 import javax.inject.Inject

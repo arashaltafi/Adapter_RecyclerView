@@ -18,7 +18,7 @@
             android:name=".swip.ui.SwipActivity"
             android:exported="false" />
         <activity
-            android:name=".animation2.ui.AnimationAdapterActivity2"
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapterActivity2"
             android:exported="false" />
         <activity
             android:name=".drag_drop.dragAndDrop1.DragAndDropActivity1"
@@ -27,7 +27,7 @@
             android:name=".drag_drop.dragAndDrop2.DragAndDropActivity2"
             android:exported="false" />
         <activity
-            android:name=".animation.ui.AnimationAdapterActivity"
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity"
             android:exported="false" />
         <activity
             android:name=".pagingAdapter.ui.PagingAdapterActivity"

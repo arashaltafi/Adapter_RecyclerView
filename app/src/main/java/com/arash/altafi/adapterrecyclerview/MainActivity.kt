@@ -3,8 +3,8 @@ package com.arash.altafi.adapterrecyclerview
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.arash.altafi.adapterrecyclerview.animation.ui.AnimationAdapterActivity
-import com.arash.altafi.adapterrecyclerview.animation2.ui.AnimationAdapterActivity2
+import com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity
+import com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapterActivity2
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop1.DragAndDropActivity1
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2.DragAndDropActivity2
 import com.arash.altafi.adapterrecyclerview.listAdapter.ui.ListAdapterActivity
