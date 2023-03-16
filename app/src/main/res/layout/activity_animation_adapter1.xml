@@ -16,6 +16,6 @@
         android:layout_margin="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layoutAnimation="@anim/layout_animation"
-        tools:listitem="@layout/item_animation_adapter" />
+        tools:listitem="@layout/item_animation_adapter_1" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

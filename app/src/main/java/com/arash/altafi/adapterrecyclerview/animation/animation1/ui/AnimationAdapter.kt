@@ -26,7 +26,7 @@ class AnimationAdapter: ListAdapter<AnimationModel, AnimationAdapter.AnimationVi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnimationViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_animation_adapter, parent,false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_animation_adapter_1, parent,false)
         return AnimationViewHolder(view)
     }
 
