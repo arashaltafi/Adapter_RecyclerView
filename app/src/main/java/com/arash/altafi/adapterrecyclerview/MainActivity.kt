@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.arash.altafi.adapterrecyclerview.animation.ui.AnimationAdapterActivity
 import com.arash.altafi.adapterrecyclerview.animation2.ui.AnimationAdapterActivity2
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop1.DragAndDropActivity1
+import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2.DragAndDropActivity2
 import com.arash.altafi.adapterrecyclerview.listAdapter.ui.ListAdapterActivity
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.ui.PagingAdapterActivity
 import com.arash.altafi.adapterrecyclerview.swip.ui.SwipActivity
@@ -31,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, PagingAdapterActivity::class.java))
         }
 
-        btn_animation_adapter.setOnClickListener {
+        btn_animation_adapter_1.setOnClickListener {
             startActivity(Intent(this, AnimationAdapterActivity::class.java))
         }
 
@@ -41,6 +42,10 @@ class MainActivity : AppCompatActivity() {
 
         btn_drag_and_drop_1.setOnClickListener {
             startActivity(Intent(this, DragAndDropActivity1::class.java))
+        }
+
+        btn_drag_and_drop_2.setOnClickListener {
+            startActivity(Intent(this, DragAndDropActivity2::class.java))
         }
 
         btn_swipe_1.setOnClickListener {
