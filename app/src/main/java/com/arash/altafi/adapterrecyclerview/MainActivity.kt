@@ -3,7 +3,7 @@ package com.arash.altafi.adapterrecyclerview
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity
+import com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity1
 import com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapterActivity2
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop1.DragAndDropActivity1
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2.DragAndDropActivity2
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_animation_adapter_1.setOnClickListener {
-            startActivity(Intent(this, AnimationAdapterActivity::class.java))
+            startActivity(Intent(this, AnimationAdapterActivity1::class.java))
         }
 
         btn_animation_adapter_2.setOnClickListener {

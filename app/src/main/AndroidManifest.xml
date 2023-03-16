@@ -27,7 +27,7 @@
             android:name=".drag_drop.dragAndDrop2.DragAndDropActivity2"
             android:exported="false" />
         <activity
-            android:name="com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity"
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity1"
             android:exported="false" />
         <activity
             android:name=".pagingAdapter.ui.PagingAdapterActivity"

@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.arash.altafi.adapterrecyclerview.R
-import com.arash.altafi.adapterrecyclerview.animation.animation1.model.AnimationModel
+import com.arash.altafi.adapterrecyclerview.animation.animation1.model.AnimationModel1
 
-class AnimationAdapter: ListAdapter<AnimationModel, AnimationAdapter.AnimationViewHolder>(Companion) {
+class AnimationAdapter1: ListAdapter<AnimationModel1, AnimationAdapter1.AnimationViewHolder>(Companion) {
 
-    companion object : DiffUtil.ItemCallback<AnimationModel>() {
-        override fun areItemsTheSame(oldItem: AnimationModel, newItem: AnimationModel): Boolean {
+    companion object : DiffUtil.ItemCallback<AnimationModel1>() {
+        override fun areItemsTheSame(oldItem: AnimationModel1, newItem: AnimationModel1): Boolean {
             return oldItem == newItem
         }
-        override fun areContentsTheSame(oldItem: AnimationModel, newItem: AnimationModel): Boolean {
+        override fun areContentsTheSame(oldItem: AnimationModel1, newItem: AnimationModel1): Boolean {
             return oldItem == newItem
         }
     }
