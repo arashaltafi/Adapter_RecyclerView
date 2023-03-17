@@ -7,7 +7,7 @@ import retrofit2.http.Query
 
 interface PagingAdapterService {
 
-    @GET("https://rickandmortyapi.com/api/character")
+    @GET("character")
     suspend fun getDataFromAPI(@Query("page") query: Int): RickAndMortyList
 
 }
