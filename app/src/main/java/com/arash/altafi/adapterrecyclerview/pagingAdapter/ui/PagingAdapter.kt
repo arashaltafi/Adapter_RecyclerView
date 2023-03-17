@@ -1,48 +1,52 @@
 package com.arash.altafi.adapterrecyclerview.pagingAdapter.ui
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
-import com.arash.altafi.adapterrecyclerview.R
-import com.arash.altafi.adapterrecyclerview.pagingAdapter.model.CharacterData
+import com.arash.altafi.adapterrecyclerview.databinding.ItemPagingAdapterBinding
+import com.arash.altafi.adapterrecyclerview.pagingAdapter.model.UserResponse
+import com.bumptech.glide.Glide
 
-class PagingAdapter: PagingDataAdapter<CharacterData, PagingAdapter.PagingViewHolder>(Companion) {
+class PagingAdapter :
+    PagingDataAdapter<UserResponse.NewsData.UserData, PagingAdapter.PagingViewHolder>(Companion) {
 
-    companion object : DiffUtil.ItemCallback<CharacterData>() {
-        override fun areItemsTheSame(oldItem: CharacterData, newItem: CharacterData): Boolean {
-            return oldItem.name == newItem.name
+    companion object : DiffUtil.ItemCallback<UserResponse.NewsData.UserData>() {
+        override fun areItemsTheSame(
+            oldItem: UserResponse.NewsData.UserData,
+            newItem: UserResponse.NewsData.UserData
+        ): Boolean {
+            return oldItem.id == newItem.id
         }
-        override fun areContentsTheSame(oldItem: CharacterData, newItem: CharacterData): Boolean {
-            return oldItem.name == newItem.name
-                    && oldItem.species == newItem.species
-        }
-    }
 
-    inner class PagingViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val imageView: ImageView = itemView.findViewById(R.id.imageView)
-        val tvName: TextView = itemView.findViewById(R.id.tvName)
-        val tvDesc: TextView = itemView.findViewById(R.id.tvDesc)
+        override fun areContentsTheSame(
+            oldItem: UserResponse.NewsData.UserData,
+            newItem: UserResponse.NewsData.UserData
+        ): Boolean {
+            return oldItem == newItem
+        }
     }
 
     override fun onBindViewHolder(holder: PagingViewHolder, position: Int) {
         getItem(position)?.let {
-            holder.imageView.load(
-                it.image
-            )
-            holder.tvDesc.text = it.species
-            holder.tvName.text = it.name
+            holder.bind(it)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagingViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_paging_adapter, parent, false)
-        return PagingViewHolder(view)
+        val binding = ItemPagingAdapterBinding.inflate(LayoutInflater.from(parent.context))
+        return PagingViewHolder(binding)
+    }
+
+    inner class PagingViewHolder(private val binding: ItemPagingAdapterBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(userData: UserResponse.NewsData.UserData) = binding.apply {
+            Glide.with(root.context).load(userData.avatar).into(imageView)
+            tvDesc.text = userData.family
+            tvName.text = userData.name
+        }
     }
 
 }

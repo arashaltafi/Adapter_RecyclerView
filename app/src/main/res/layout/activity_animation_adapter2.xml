@@ -10,11 +10,11 @@
         android:id="@+id/rvAnimationAdapter2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="10"
-        tools:listitem="@layout/item_animation_adapter_2"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        tools:listitem="@layout/item_animation_adapter_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

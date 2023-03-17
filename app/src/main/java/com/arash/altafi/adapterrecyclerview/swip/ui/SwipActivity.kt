@@ -3,10 +3,9 @@ package com.arash.altafi.adapterrecyclerview.swip.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
-import com.arash.altafi.adapterrecyclerview.R
+import com.arash.altafi.adapterrecyclerview.databinding.ActivitySwipBinding
 import com.arash.altafi.adapterrecyclerview.swip.model.Contact
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_swip.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -17,14 +16,18 @@ class SwipActivity : AppCompatActivity() {
     @Inject
     lateinit var contactAdapter : ContactAdapter
 
+    private val binding by lazy {
+        ActivitySwipBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_swip)
+        setContentView(binding.root)
 
         init()
     }
 
-    private fun init() {
+    private fun init() = binding.apply {
         contact.add(Contact("Arash" , "Altafi", "09123456789"))
         contact.add(Contact("Jafar" , "Jafari", "09111111111"))
         contact.add(Contact("Reza" , "Sadeghi", ""))
@@ -37,7 +40,7 @@ class SwipActivity : AppCompatActivity() {
         }
     }
 
-    private fun swipeSetup() {
+    private fun swipeSetup() = binding.apply {
         val swipeHelper = SwipeHelper(rvContact, contactAdapter)
         ItemTouchHelper(swipeHelper).attachToRecyclerView(rvContact)
     }

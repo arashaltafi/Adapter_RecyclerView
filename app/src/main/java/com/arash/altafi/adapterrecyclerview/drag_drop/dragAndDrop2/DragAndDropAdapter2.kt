@@ -1,23 +1,21 @@
 package com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.arash.altafi.adapterrecyclerview.R
-import kotlinx.android.synthetic.main.item_drag_and_drop2.view.*
+import com.arash.altafi.adapterrecyclerview.databinding.ItemDragAndDrop2Binding
 
 class DragAndDropAdapter2 : RecyclerView.Adapter<DragAndDropAdapter2.DragAndDrop2ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DragAndDrop2ViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_drag_and_drop2, parent, false)
+        val itemView = ItemDragAndDrop2Binding.inflate(LayoutInflater.from(parent.context))
         return DragAndDrop2ViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: DragAndDrop2ViewHolder, position: Int) {
-        val movieItem= differ.currentList[position]
+        val movieItem = differ.currentList[position]
         holder.bindView(movieItem)
     }
 
@@ -25,7 +23,7 @@ class DragAndDropAdapter2 : RecyclerView.Adapter<DragAndDropAdapter2.DragAndDrop
         return differ.currentList.size
     }
 
-    private val differCallback = object: DiffUtil.ItemCallback<User>() {
+    private val differCallback = object : DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem == newItem
         }
@@ -43,17 +41,17 @@ class DragAndDropAdapter2 : RecyclerView.Adapter<DragAndDropAdapter2.DragAndDrop
         val fromItem = list[fromPosition]
         list.removeAt(fromPosition)
         if (toPosition < fromPosition) {
-            list.add(toPosition + 1 , fromItem)
+            list.add(toPosition + 1, fromItem)
         } else {
             list.add(toPosition - 1, fromItem)
         }
         differ.submitList(list)
     }
 
-
-    inner class DragAndDrop2ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class DragAndDrop2ViewHolder(private val binding: ItemDragAndDrop2Binding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bindView(item: User) {
-            itemView.apply {
+            binding.apply {
                 textTitle.text = item.name
                 textDesc.text = item.location
             }

@@ -1,27 +1,28 @@
 package com.arash.altafi.adapterrecyclerview.pagingAdapter.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.viewModelScope
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import androidx.paging.cachedIn
-import com.arash.altafi.adapterrecyclerview.pagingAdapter.model.CharacterData
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.paging.*
+import com.arash.altafi.adapterrecyclerview.base.BaseViewModel
+import com.arash.altafi.adapterrecyclerview.pagingAdapter.model.UserResponse
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingAdapterDataSource
-import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingAdapterService
+import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 @HiltViewModel
-class PagingAdapterViewModel @Inject constructor(application: Application): AndroidViewModel(application) {
+class PagingAdapterViewModel @Inject constructor(
+    private val pagingRepository: PagingRepository
+): BaseViewModel() {
 
-    @Inject
-    lateinit var pagingService: PagingAdapterService
+    private val _liveGetRepoList = MutableLiveData<PagingData<UserResponse.NewsData.UserData>>()
+    val liveGetRepoList: LiveData<PagingData<UserResponse.NewsData.UserData>>
+        get() = _liveGetRepoList
 
-    fun getListData(): Flow<PagingData<CharacterData>> {
-        return Pager (config = PagingConfig(pageSize = 20, maxSize = 200),
-        pagingSourceFactory = {PagingAdapterDataSource(pagingService)}).flow.cachedIn(viewModelScope)
+    fun getListData() {
+        callApiPaging(
+            _liveGetRepoList,
+            PagingAdapterDataSource(pagingRepository)
+        )
     }
 }

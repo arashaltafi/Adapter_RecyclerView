@@ -1,62 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="30dp"
-    android:layout_gravity="center"
-    android:gravity="center"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".MainActivity">
 
     <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
-        android:text="list adapter"
         android:id="@+id/btn_list_adapter"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="list adapter" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="paging adapter"
         android:id="@+id/btn_paging_adapter"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="paging adapter" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="animation adapter 1"
         android:id="@+id/btn_animation_adapter_1"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="animation adapter 1" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="animation adapter 2"
         android:id="@+id/btn_animation_adapter_2"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="animation adapter 2" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="drag and drop 1"
         android:id="@+id/btn_drag_and_drop_1"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="drag and drop 1" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="drag and drop 2"
         android:id="@+id/btn_drag_and_drop_2"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="drag and drop 2" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="Swipe"
         android:id="@+id/btn_swipe_1"
-        android:layout_height="wrap_content"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Swipe" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,10 +5,13 @@ import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.arash.altafi.adapterrecyclerview.R
-import kotlinx.android.synthetic.main.activity_drag_and_drop1.*
+import com.arash.altafi.adapterrecyclerview.databinding.ActivityDragAndDrop1Binding
 
 class DragAndDropActivity1 : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityDragAndDrop1Binding.inflate(layoutInflater)
+    }
 
     private val itemTouchHelper by lazy {
         val simpleItemTouchCallback = object : ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END, 0) {
@@ -33,7 +36,7 @@ class DragAndDropActivity1 : AppCompatActivity() {
 
             override fun clearView(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder) {
                 super.clearView(recyclerView, viewHolder)
-                viewHolder?.itemView?.alpha = 1.0f
+                viewHolder.itemView.alpha = 1.0f
             }
 
         }
@@ -42,15 +45,15 @@ class DragAndDropActivity1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_drag_and_drop1)
+        setContentView(binding.root)
 
         init()
     }
 
-    private fun init() {
-        rc_drag_drop_1.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager
-        rc_drag_drop_1.adapter = DragAndDropAdapter1(this)
-        itemTouchHelper.attachToRecyclerView(rc_drag_drop_1)
+    private fun init() = binding.apply {
+        rcDragDrop1.layoutManager = LinearLayoutManager(this@DragAndDropActivity1)
+        rcDragDrop1.adapter = DragAndDropAdapter1(this@DragAndDropActivity1)
+        itemTouchHelper.attachToRecyclerView(rcDragDrop1)
     }
 
     fun startDragging(viewHolder: RecyclerView.ViewHolder) {

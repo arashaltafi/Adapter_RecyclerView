@@ -3,26 +3,29 @@ package com.arash.altafi.adapterrecyclerview.animation.animation2.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.arash.altafi.adapterrecyclerview.R
 import com.arash.altafi.adapterrecyclerview.animation.animation2.model.AnimationModel2
+import com.arash.altafi.adapterrecyclerview.databinding.ActivityAnimationAdapter2Binding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_animation_adapter2.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class AnimationAdapterActivity2 : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityAnimationAdapter2Binding.inflate(layoutInflater)
+    }
 
     @Inject
     lateinit var animationAdapter2: AnimationAdapter2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_animation_adapter2)
+        setContentView(binding.root)
 
         init()
     }
 
-    private fun init() {
+    private fun init() = binding.apply {
         val movie: ArrayList<AnimationModel2> = arrayListOf()
         movie.add(AnimationModel2("Movie 1"))
         movie.add(AnimationModel2("Movie 2"))

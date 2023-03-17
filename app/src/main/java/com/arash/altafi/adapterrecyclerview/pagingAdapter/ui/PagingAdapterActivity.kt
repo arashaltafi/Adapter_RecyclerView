@@ -3,17 +3,19 @@ package com.arash.altafi.adapterrecyclerview.pagingAdapter.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.arash.altafi.adapterrecyclerview.R
+import com.arash.altafi.adapterrecyclerview.base.toGone
+import com.arash.altafi.adapterrecyclerview.databinding.ActivityPagingAdapterBinding
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.viewmodel.PagingAdapterViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_paging_adapter.*
-import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class PagingAdapterActivity : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityPagingAdapterBinding.inflate(layoutInflater)
+    }
 
     private val pagingAdapterViewModel by viewModels<PagingAdapterViewModel>()
 
@@ -22,25 +24,26 @@ class PagingAdapterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_paging_adapter)
+        setContentView(binding.root)
 
         initAdapter()
         initViewModel()
     }
 
-    private fun initAdapter() {
+    private fun initAdapter() = binding.apply {
+        pagingAdapterViewModel.getListData()
         rvPagingAdapter.apply {
-            val decoration  = DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL)
+            val decoration =
+                DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL)
             addItemDecoration(decoration)
             adapter = pagingAdapter
         }
     }
 
     private fun initViewModel() {
-        lifecycleScope.launchWhenCreated {
-            pagingAdapterViewModel.getListData().collectLatest {
-                pagingAdapter.submitData(it)
-            }
+        pagingAdapterViewModel.liveGetRepoList.observe(this) {
+            pagingAdapter.submitData(lifecycle, it)
+            binding.progress.toGone()
         }
     }
 

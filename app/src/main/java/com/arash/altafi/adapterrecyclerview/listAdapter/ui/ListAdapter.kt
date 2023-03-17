@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.arash.altafi.adapterrecyclerview.R
-import com.arash.altafi.adapterrecyclerview.listAdapter.ext.highlightAll
+import com.arash.altafi.adapterrecyclerview.base.highlightAll
 import com.arash.altafi.adapterrecyclerview.listAdapter.model.Pokemon
 
 class ListAdapter: ListAdapter<Pokemon, com.arash.altafi.adapterrecyclerview.listAdapter.ui.ListAdapter.ListAdapterViewHolder>(Companion) {

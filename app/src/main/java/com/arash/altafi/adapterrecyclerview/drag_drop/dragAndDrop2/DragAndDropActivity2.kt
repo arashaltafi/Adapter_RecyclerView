@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.arash.altafi.adapterrecyclerview.R
-import kotlinx.android.synthetic.main.activity_drag_and_drop2.*
+import com.arash.altafi.adapterrecyclerview.databinding.ActivityDragAndDrop2Binding
 
 class DragAndDropActivity2 : AppCompatActivity() {
 
     private lateinit var recyclerviewAdapter: DragAndDropAdapter2
+
+    private val binding by lazy {
+        ActivityDragAndDrop2Binding.inflate(layoutInflater)
+    }
 
     private val itemTouchHelper by lazy {
         val itemTouchCallback = object: ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP or ItemTouchHelper.DOWN or ItemTouchHelper.START or ItemTouchHelper.END, 0) {
@@ -51,16 +54,16 @@ class DragAndDropActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_drag_and_drop2)
+        setContentView(binding.root)
 
         init()
     }
 
-    private fun init() {
-        itemTouchHelper.attachToRecyclerView(rc_drag_drop_2)
+    private fun init() = binding.apply {
+        itemTouchHelper.attachToRecyclerView(rcDragDrop2)
         recyclerviewAdapter = DragAndDropAdapter2()
         recyclerviewAdapter.differ.submitList(getUsers())
-        rc_drag_drop_2.adapter = recyclerviewAdapter
+        rcDragDrop2.adapter = recyclerviewAdapter
     }
 
     private fun getUsers() : List<User>{

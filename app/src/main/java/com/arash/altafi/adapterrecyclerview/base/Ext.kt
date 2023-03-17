@@ -1,4 +1,4 @@
-package com.arash.altafi.adapterrecyclerview.listAdapter.ext
+package com.arash.altafi.adapterrecyclerview.base
 
 import android.content.Context
 import android.text.Editable
@@ -17,6 +17,17 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import java.util.ArrayList
+
+
+inline fun <reified NEW> Any.cast(): NEW? {
+    return if (this.isCastable<NEW>())
+        this as NEW
+    else null
+}
+
+inline fun <reified NEW> Any.isCastable(): Boolean {
+    return this is NEW
+}
 
 fun TextView.highlightAll(
     target: String,

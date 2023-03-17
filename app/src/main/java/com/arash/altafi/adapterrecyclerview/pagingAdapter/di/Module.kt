@@ -1,10 +1,12 @@
 package com.arash.altafi.adapterrecyclerview.pagingAdapter.di
 
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingAdapterService
+import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingRepository
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.ui.PagingAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -15,13 +17,12 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object Module {
 
-
     @Restful2
     @Singleton
     @Provides
     fun providePagingAdapterRetrofit(okHttpClient: OkHttpClient, gsonConverterFactory: GsonConverterFactory): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://rickandmortyapi.com/api/")
+            .baseUrl("https://arashaltafi.ir/")
             .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()

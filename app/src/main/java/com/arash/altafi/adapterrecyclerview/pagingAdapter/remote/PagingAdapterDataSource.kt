@@ -1,46 +1,36 @@
 package com.arash.altafi.adapterrecyclerview.pagingAdapter.remote
 
-import android.net.Uri
+import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.arash.altafi.adapterrecyclerview.pagingAdapter.model.CharacterData
+import com.arash.altafi.adapterrecyclerview.pagingAdapter.model.UserResponse
 
-class PagingAdapterDataSource(private val apiService: PagingAdapterService): PagingSource<Int, CharacterData>() {
+class PagingAdapterDataSource(private val pagingRepository: PagingRepository) :
+    PagingSource<Int, UserResponse.NewsData.UserData>() {
 
-    override fun getRefreshKey(state: PagingState<Int, CharacterData>): Int? {
-        return state.anchorPosition
+    override fun getRefreshKey(state: PagingState<Int, UserResponse.NewsData.UserData>): Int? {
+        return state.anchorPosition?.let { anchorPosition ->
+            state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
+                ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
+        }
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, CharacterData> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, UserResponse.NewsData.UserData> {
         return try {
-            val nextPage: Int = params.key ?: FIRST_PAGE_INDEX
-            val response = apiService.getDataFromAPI(query = nextPage)
-
-            var nextPageNumber: Int? = null
-            if(response.info.next != null) {
-                val uri = Uri.parse(response.info.next)
-                val nextPageQuery = uri.getQueryParameter("page")
-                nextPageNumber = nextPageQuery?.toInt()
+            val page = params.key ?: 1
+            val response = pagingRepository.getDataFromAPI(page, 10)
+            val items = response.body()
+            val prevKey = if (page == 1) null else page - 1
+            val nextKey = if (items?.isEmpty() == true) null else page + 1
+            Log.i("test123321", "data source")
+            items?.let {
+                LoadResult.Page(items, prevKey, nextKey)
+            } ?: kotlin.run {
+                LoadResult.Page(listOf(), prevKey, nextKey)
             }
-            var prevPageNumber: Int? = null
-            if(response.info.prev != null) {
-                val uri = Uri.parse(response.info.prev)
-                val prevPageQuery = uri.getQueryParameter("page")
-
-                prevPageNumber = prevPageQuery?.toInt()
-            }
-
-            LoadResult.Page(data = response.results,
-                    prevKey = prevPageNumber,
-                    nextKey = nextPageNumber)
-        }
-        catch (e: Exception) {
+        } catch (e: Exception) {
             LoadResult.Error(e)
         }
-    }
-
-    companion object {
-        private const val FIRST_PAGE_INDEX = 1
     }
 
 }

@@ -1,5 +1,27 @@
 package com.arash.altafi.adapterrecyclerview.pagingAdapter.model
 
-data class RickAndMortyList(val info: Info, val results: List<CharacterData>)
-data class CharacterData(val name: String?, val species: String?, val image: String?)
-data class Info(val count: Int?, val pages: String?, val next: String?,val prev: String?)
+import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+class UserResponse : Parcelable {
+
+    @Parcelize
+    class NewsData : Parcelable {
+
+        @Parcelize
+        data class UserData(
+            @SerializedName("id")
+            val id: String,
+            @SerializedName("name")
+            val name: String,
+            @SerializedName("avatar")
+            val avatar: String,
+            @SerializedName("family")
+            val family: String
+        ) : Parcelable
+
+    }
+
+}
