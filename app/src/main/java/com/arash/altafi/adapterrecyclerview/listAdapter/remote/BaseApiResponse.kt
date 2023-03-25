@@ -21,8 +21,9 @@ abstract class BaseApiResponse(private val context: Context) {
             } catch (e: Exception) {
                 return error(e.message ?: e.toString())
             }
+        } else {
+            return error("No internet connection !")
         }
-        return error("No internet connection !")
     }
 
     private fun <T> error(errorMessage: String): NetworkResult<T> =

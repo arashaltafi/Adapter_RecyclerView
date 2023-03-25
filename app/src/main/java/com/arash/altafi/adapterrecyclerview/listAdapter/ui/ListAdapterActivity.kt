@@ -83,6 +83,7 @@ class ListAdapterActivity : AppCompatActivity() {
         listAdapterViewModel.responseType.observe(this@ListAdapterActivity) { responseType ->
             when (responseType) {
                 is NetworkResult.Error -> {
+                    Log.d("test123321", "fetchAllPokemonResponse: Error!")
                     pbPokemon.visibility = View.GONE
                     Toast.makeText(
                         this@ListAdapterActivity,
@@ -92,16 +93,17 @@ class ListAdapterActivity : AppCompatActivity() {
                 }
 
                 is NetworkResult.Loading -> {
+                    Log.d("test123321", "fetchAllPokemonResponse: Loading!")
                     pbPokemon.visibility = View.VISIBLE
                 }
 
                 is NetworkResult.Success -> {
+                    pbPokemon.visibility = View.GONE
                     Log.d("test123321", "fetchAllPokemonResponse: Success!")
                 }
             }
         }
         listAdapterViewModel.pokemonList.observe(this@ListAdapterActivity) { pokemonList ->
-            pbPokemon.visibility = View.GONE
             listAdapter.submitList(pokemonList)
             pokemonList.forEach {
                 list.add(Pokemon(it.name, it.sprites))

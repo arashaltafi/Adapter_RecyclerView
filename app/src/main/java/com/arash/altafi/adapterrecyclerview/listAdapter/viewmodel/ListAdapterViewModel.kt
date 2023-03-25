@@ -26,7 +26,22 @@ class ListAdapterViewModel @Inject constructor(
 
     fun fetchAllPokemonResponse() = viewModelScope.launch {
         repository.getAllPokemon().collect { values ->
-            responseType.value = NetworkResult.Loading()
+
+            when (values) {
+                is NetworkResult.Success -> {
+                    responseType.value = NetworkResult.Loading()
+                }
+
+                is NetworkResult.Error -> {
+                    val errorMessage = values.message ?: "An Error Occurred!!"
+                    responseType.value = NetworkResult.Error(errorMessage)
+                }
+
+                is NetworkResult.Loading -> {
+                    responseType.value = NetworkResult.Loading()
+                }
+            }
+
             _pokemonResponse.value = values
             _pokemonResponse.value?.data?.let {
                 for (result in it.results) {
@@ -36,6 +51,7 @@ class ListAdapterViewModel @Inject constructor(
                             is NetworkResult.Success -> {
                                 value.data?.let {
                                     pokemonDetailsList.add(value.data)
+                                    responseType.value = NetworkResult.Success(it)
                                 }
                             }
 
