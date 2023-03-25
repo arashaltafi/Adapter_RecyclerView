@@ -103,4 +103,7 @@ dependencies {
     //Multi Dex
     implementation "androidx.multidex:multidex:2.0.1"
 
+    //Loading
+    implementation "com.wang.avi:library:2.1.3"
+
 }

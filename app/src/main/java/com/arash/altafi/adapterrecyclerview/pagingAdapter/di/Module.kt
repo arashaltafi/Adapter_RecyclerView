@@ -3,6 +3,7 @@ package com.arash.altafi.adapterrecyclerview.pagingAdapter.di
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingAdapterService
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.remote.PagingRepository
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.ui.PagingAdapter
+import com.arash.altafi.adapterrecyclerview.pagingAdapter.ui.StateAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -36,5 +37,9 @@ object Module {
     @Singleton
     @Provides
     fun providePagingAdapter() = PagingAdapter()
+
+    @Singleton
+    @Provides
+    fun provideStateAdapter() = StateAdapter()
 
 }

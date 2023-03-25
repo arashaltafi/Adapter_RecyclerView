@@ -20,6 +20,9 @@ class PagingAdapterActivity : AppCompatActivity() {
     private val pagingAdapterViewModel by viewModels<PagingAdapterViewModel>()
 
     @Inject
+    lateinit var stateAdapter: StateAdapter
+
+    @Inject
     lateinit var pagingAdapter: PagingAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +36,13 @@ class PagingAdapterActivity : AppCompatActivity() {
     private fun initAdapter() = binding.apply {
         pagingAdapterViewModel.getListData()
         rvPagingAdapter.apply {
-            val decoration =
-                DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL)
-            addItemDecoration(decoration)
-            adapter = pagingAdapter
+//            val decoration =
+//                DividerItemDecoration(applicationContext, DividerItemDecoration.VERTICAL)
+//            addItemDecoration(decoration)
+            stateAdapter.onRetry = { pagingAdapter.retry() }
+            adapter = pagingAdapter.withLoadStateFooter(
+                stateAdapter
+            )
         }
     }
 
