@@ -15,6 +15,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdapterRecyclerView">
         <activity
+            android:name=".expandable.expandable2.sample5.Sample5Expandable2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".expandable.expandable2.sample4.Sample4Expandable2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".expandable.expandable2.sample3.Sample3Expandable2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".expandable.expandable2.sample2.Sample2Expandable2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".expandable.expandable2.sample1.Sample1Expandable2Activity"
+            android:exported="false" />
+        <activity
             android:name=".expandable.expandable2.ExpandableActivity2"
             android:exported="false" />
         <activity
