@@ -8,6 +8,8 @@ import com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAda
 import com.arash.altafi.adapterrecyclerview.databinding.ActivityMainBinding
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop1.DragAndDropActivity1
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2.DragAndDropActivity2
+import com.arash.altafi.adapterrecyclerview.expandable.expandable1.ExpandableActivity1
+import com.arash.altafi.adapterrecyclerview.expandable.expandable2.ExpandableActivity2
 import com.arash.altafi.adapterrecyclerview.listAdapter.ui.ListAdapterActivity
 import com.arash.altafi.adapterrecyclerview.pagingAdapter.ui.PagingAdapterActivity
 import com.arash.altafi.adapterrecyclerview.swip.ui.SwipActivity
@@ -55,6 +57,14 @@ class MainActivity : AppCompatActivity() {
 
         btnSwipe1.setOnClickListener {
             startActivity(Intent(this@MainActivity, SwipActivity::class.java))
+        }
+
+        btnExpandable1.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ExpandableActivity1::class.java))
+        }
+
+        btnExpandable2.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ExpandableActivity2::class.java))
         }
 
     }

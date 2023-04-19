@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AdapterRecyclerView">
         <activity
+            android:name=".expandable.expandable2.ExpandableActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".expandable.expandable1.ExpandableActivity1"
+            android:exported="false" />
+        <activity
             android:name=".swip.ui.SwipActivity"
             android:exported="false" />
         <activity
