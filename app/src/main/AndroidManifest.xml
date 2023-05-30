@@ -39,13 +39,22 @@
             android:name=".swip.ui.SwipActivity"
             android:exported="false" />
         <activity
-            android:name="com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapterActivity2"
-            android:exported="false" />
-        <activity
             android:name=".drag_drop.dragAndDrop1.DragAndDropActivity1"
             android:exported="false" />
         <activity
             android:name=".drag_drop.dragAndDrop2.DragAndDropActivity2"
+            android:exported="false" />
+        <activity
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation5.ui.AnimationAdapterActivity5"
+            android:exported="false" />
+        <activity
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation4.ui.AnimationAdapterActivity4"
+            android:exported="false" />
+        <activity
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation3.ui.AnimationAdapterActivity3"
+            android:exported="false" />
+        <activity
+            android:name="com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapterActivity2"
             android:exported="false" />
         <activity
             android:name="com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity1"

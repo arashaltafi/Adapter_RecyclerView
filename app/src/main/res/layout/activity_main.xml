@@ -44,6 +44,27 @@
                 android:text="animation adapter 2" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_animation_adapter_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="animation adapter 3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_animation_adapter_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="animation adapter 4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_animation_adapter_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="animation adapter 5" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_drag_and_drop_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

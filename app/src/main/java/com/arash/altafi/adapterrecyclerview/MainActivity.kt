@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.arash.altafi.adapterrecyclerview.animation.animation1.ui.AnimationAdapterActivity1
 import com.arash.altafi.adapterrecyclerview.animation.animation2.ui.AnimationAdapterActivity2
+import com.arash.altafi.adapterrecyclerview.animation.animation3.ui.AnimationAdapterActivity3
+import com.arash.altafi.adapterrecyclerview.animation.animation4.ui.AnimationAdapterActivity4
+import com.arash.altafi.adapterrecyclerview.animation.animation5.ui.AnimationAdapterActivity5
 import com.arash.altafi.adapterrecyclerview.databinding.ActivityMainBinding
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop1.DragAndDropActivity1
 import com.arash.altafi.adapterrecyclerview.drag_drop.dragAndDrop2.DragAndDropActivity2
@@ -45,6 +48,18 @@ class MainActivity : AppCompatActivity() {
 
         btnAnimationAdapter2.setOnClickListener {
             startActivity(Intent(this@MainActivity, AnimationAdapterActivity2::class.java))
+        }
+
+        btnAnimationAdapter3.setOnClickListener {
+            startActivity(Intent(this@MainActivity, AnimationAdapterActivity3::class.java))
+        }
+
+        btnAnimationAdapter4.setOnClickListener {
+            startActivity(Intent(this@MainActivity, AnimationAdapterActivity4::class.java))
+        }
+
+        btnAnimationAdapter5.setOnClickListener {
+            startActivity(Intent(this@MainActivity, AnimationAdapterActivity5::class.java))
         }
 
         btnDragAndDrop1.setOnClickListener {
